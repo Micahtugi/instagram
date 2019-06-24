@@ -16,10 +16,35 @@ Including another URLconf
 from django.conf.urls import url,include
 from django.contrib import admin
 from django.contrib.auth import views
+from django.conf import settings
+from django.conf.urls.static import static
+from django.contrib import admin
+# from django.urls import url, include
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^',include('gram.urls')),
     url(r'^accounts/', include('registration.backends.simple.urls')),
     url(r'^logout/$', views.logout, {"next_page": '/'}),
+    url('password-reset/',
+         auth_views.PasswordResetView.as_view(
+             template_name='users/password_reset.html'
+         ),
+         name='password_reset'),
+    url('password-reset/done/',
+         auth_views.PasswordResetDoneView.as_view(
+             template_name='users/password_reset_done.html'
+         ),
+         name='password_reset_done'),
+    url('password-reset-confirm/<uidb64>/<token>/',
+         auth_views.PasswordResetConfirmView.as_view(
+             template_name='users/password_reset_confirm.html'
+         ),
+         name='password_reset_confirm'),
+    url('password-reset-complete/',
+         auth_views.PasswordResetCompleteView.as_view(
+             template_name='users/password_reset_complete.html'
+         ),
+         name='password_reset_complete'),
+    url('', include('gram.urls')),
 ]
