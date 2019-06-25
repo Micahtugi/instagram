@@ -23,10 +23,10 @@ Launch the application by running this command: '$ python manage.py runserver'
 ## Support and contact details
 Incase of any questions or comments feel free to contact me @micahkimathi@gmail.com
 ## Technologies used
-Bootstrap3
+Bootstrap3- for making the application visually appealing
 Django framework
-HTML5
-CSS
+HTML5- for the templates
+CSS- for styling
 ### Licence
 MIT License
 
