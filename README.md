@@ -27,6 +27,8 @@ Bootstrap3- for making the application visually appealing
 Django framework
 HTML5- for the templates
 CSS- for styling
+## Known Bugs 
+There are no known bugs yet but incase you come across any have the liberty to write me an email at micahkimathi@gmail.com
 ### Licence
 MIT License
 
